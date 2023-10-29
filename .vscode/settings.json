@@ -1,0 +1,8 @@
+{
+    "java.project.sourcePaths": ["src", "src/main/resources"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/datechooser.jar"
+    ],
+    "java.debug.settings.onBuildFailureProceed": true,
+}
