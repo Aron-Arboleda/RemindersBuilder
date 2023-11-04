@@ -56,7 +56,7 @@ public class Main extends JFrame implements ActionListener {
 
     // Other Variables
     public enum GroupType {NEW, SAVED}
-    static String emojis[] = {"📖","📔","📍","🔔", ">", "•", "○", "-", "■"};
+    static String emojis[] = {"📖","📝","📍","🔔", "📚", "📔", "🔎", "📒", "📕", "📁", "📌", "⏳"};
     static ArrayList<ArrayList<String>> data;
     static ArrayList<String> currentlyUsing; 
     static String[][] months = {
@@ -69,7 +69,7 @@ public class Main extends JFrame implements ActionListener {
     //#endregion
 
     Main(){
-        //filePath = "D:\\Documents\\Codes\\Java Codes\\Projects\\RemindersBuilder\\src\\main\\resources\\data\\RemindersData.txt";
+        //filePath = "bin\\data\\RemindersData.txt";
         filePath = getDatabaseFilePath();
         createDatabaseFile(filePath);
         this.setTitle("Reminders");
