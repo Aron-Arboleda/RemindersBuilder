@@ -1,3 +1,37 @@
-## Reminders Builder
-you can download run the RemindersBuilder.jar file under the lib folder if you want to use the app, 
-if the jar file doesn't work you can just download everything and compile it as a jar file and try to run it on your end
+# Reminders Builder 
+
+<img src='RemindersBuilder.png'>
+
+## A Java Swing Desktop App that helps 'build' and create text reminders with efficiency and maintenance
+
+The app simply lets the user create and also update text reminders, It gives the user a guide with the provided text-fields and a format to create and manipulate text reminders that can be pasted into the users notes or any kind of platform where it could be useful to have a reminders.
+
+A sample where an output text reminder might be useful can be seen in the image(s) below:
+
+<div style='
+  display: flex;
+  flex-direction: row;
+  object-fit: cover;
+  column-gap: 10px;
+  max-width: 50%;
+  max-height: 30%;
+'>
+  <img src='messengerReminders.png'>
+  <img src='googlekeepReminders.png'>
+</div>
+
+## Instructions
+### To use the app
+* you can download and run the RemindersBuilder.jar file under the lib folder if you want to use the app, 
+* if the jar file doesn't open, you can try to troubleshoot by downloading jarfix.exe on the web, enable jarfix, then try to run it again
+* if it still doesn't work, just pull the whole repository on your client and try to compile the jar on your end.
+### How to use the App
+* When you open the jar file, the jar will create a .txt file on the same directory that will serve as the user database file
+* The creation of Reminders is straightforward, you can press the create button to create a brand new reminders, fill in all the text fields, choose the format you want, the style of the bullet, the title, etc. and just press the CREATE REMINDER at the bottom. You will be directed The output page, you can now copy and save your reminders. When you press copy the reminders will be copied as text on your clipboard and you can paste it anywhere you want. When you press the save button the created reminders will be saved onto the database and in the collections page where you can see all your created reminders. 
+* To update a reminder that you are using, just simply click the UPDATE button and make your desired changes and click the UPDATE REMINDERS button and save your reminders.
+
+## Features still in development
+* a need for an extra format (📌 subject - content (only))
+* a need for a time chooser UI (currently, only data chooser is available per bullet item)
+* an SQL database (the database currently runs on a .txt file)
+
