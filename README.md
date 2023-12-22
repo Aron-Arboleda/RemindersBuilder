@@ -35,3 +35,16 @@ A sample where an output text reminder might be useful can be seen in the image(
 * a need for a time chooser UI (currently, only data chooser is available per bullet item)
 * an SQL database (the database currently runs on a .txt file)
 
+## Images
+
+### Home Page
+<img src='RemindersBuilder_homepage.png'>
+
+### Create Page
+<img src='RemindersBuilder_createpage.png'>
+
+### Update Page
+<img src='RemindersBuilder_updatepage.png'>
+
+### Collections Page
+<img src='RemindersBuilder_collectionspage.png'>
