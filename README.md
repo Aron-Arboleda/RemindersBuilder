@@ -4,7 +4,7 @@
 
 ## A Java Swing Desktop App that helps 'build' and create text reminders with efficiency and maintenance
 
-The app simply lets the user create and also update text reminders, It gives the user a guide with the provided text-fields and a format to create and manipulate text reminders that can be pasted into the users notes or any kind of platform where it could be useful to have a reminders.
+The app allows users to easily create and update text reminders. It provides a user-friendly guide with predefined text-fields and a format for creating and managing text reminders. Users can then paste these reminders into their notes or any platform where they find it useful for timely reminders.
 
 A sample where an output text reminder might be useful can be seen in the image(s) below:
 
