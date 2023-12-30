@@ -69,7 +69,7 @@ public class Main extends JFrame implements ActionListener {
     //#endregion
 
     Main(){
-        //filePath = "bin\\data\\RemindersData.txt";
+        //filePath = "src\\main\\resources\\data\\RemindersData.txt";
         filePath = getDatabaseFilePath();
         createDatabaseFile(filePath);
         this.setTitle("Reminders");
@@ -711,9 +711,10 @@ public class Main extends JFrame implements ActionListener {
                 switch (elem.format) {
                     case 0: deadline = formatDate(elem.deadline); eg.subjectField.setText(elem.subject); eg.contentField.setText(elem.content); eg.deadlineField.setText(deadline);  
                     intDate = convertToIntArray(deadline.split("-")); eg.dateChooser.setSelectedDate(new SelectedDate(intDate[1], intDate[0], intDate[2])); break;
-                    case 1: deadline = formatDate(elem.deadline); eg.contentField.setText(elem.content); eg.deadlineField.setText(deadline);
+                    case 1: eg.subjectField.setText(elem.subject); eg.contentField.setText(elem.content); break;
+                    case 2: deadline = formatDate(elem.deadline); eg.contentField.setText(elem.content); eg.deadlineField.setText(deadline);
                     intDate = convertToIntArray(deadline.split("-")); eg.dateChooser.setSelectedDate(new SelectedDate(intDate[1], intDate[0], intDate[2])); break;
-                    case 2: eg.contentField.setText(elem.content); break;
+                    case 3: eg.contentField.setText(elem.content); break;
                 }
                 sg.elementGroups.add(eg); sg.elementInputPanel.add(eg.elementPanel); sg.elementInputPanel.add(Box.createVerticalStrut(10));
             }
@@ -907,13 +908,19 @@ public class Main extends JFrame implements ActionListener {
                             eg.deadlineField.setEnabled(true);
                             break;
                         case 1:
+                            eg.subjectField.setBackground(Color.white);
+                            eg.subjectField.setEnabled(true);
+                            eg.deadlineField.setBackground(new Color(0xDADAD2));
+                            eg.deadlineField.setEnabled(false);
+                            break;
+                        case 2:
                             eg.subjectField.setBackground(new Color(0xDADAD2));
                             eg.subjectField.setEnabled(false);
                             eg.subjectField.setBorder(ElementGroup.defaultBorder);
                             eg.deadlineField.setBackground(Color.white);
                             eg.deadlineField.setEnabled(true);
                             break;
-                        case 2:
+                        case 3:
                             eg.subjectField.setBackground(new Color(0xDADAD2));
                             eg.subjectField.setEnabled(false);
                             eg.subjectField.setBorder(ElementGroup.defaultBorder);
@@ -972,12 +979,18 @@ public class Main extends JFrame implements ActionListener {
                                 checker = false;
                             } break;
                         case 1: 
+                            if (subject.isEmpty() || content.isEmpty() || 
+                            (subject.contains("_") || content.contains("_")) ||
+                            (subject.contains("~") || content.contains("~"))){
+                                checker = false;
+                            } break;
+                        case 2: 
                             if (content.isEmpty() || deadline.isEmpty() || 
                             (content.contains("_") || deadline.contains("_")) ||
                             (content.contains("~") || deadline.contains("~"))){
                                 checker = false;
                             } break;
-                        case 2: 
+                        case 3: 
                             if (content.isEmpty() || content.contains("_") || content.contains("~")){
                                 checker = false;
                             } break;
@@ -1002,9 +1015,11 @@ public class Main extends JFrame implements ActionListener {
                     switch (eg.formatCombo.getSelectedIndex()){
                         case 0: sd = eg.dateChooser.getSelectedDate(); deadline = sd.getMonth() + "-" + sd.getDay() + "-" + sd.getYear();
                         E = new Element(eg.subjectField.getText(), eg.contentField.getText(), parseDate(deadline), eg.formatCombo.getSelectedIndex()); break;
-                        case 1: sd = eg.dateChooser.getSelectedDate(); deadline = sd.getMonth() + "-" + sd.getDay() + "-" + sd.getYear();
+                        case 1:
+                        E = new Element(eg.subjectField.getText(), eg.contentField.getText(), null, eg.formatCombo.getSelectedIndex()); break;
+                        case 2: sd = eg.dateChooser.getSelectedDate(); deadline = sd.getMonth() + "-" + sd.getDay() + "-" + sd.getYear();
                         E = new Element("", eg.contentField.getText(), parseDate(deadline), eg.formatCombo.getSelectedIndex()); break;
-                        case 2: E = new Element("", eg.contentField.getText(), null, eg.formatCombo.getSelectedIndex()); break;
+                        case 3: E = new Element("", eg.contentField.getText(), null, eg.formatCombo.getSelectedIndex()); break;
                         default: E = new Element("", eg.contentField.getText(), null, eg.formatCombo.getSelectedIndex()); 
                     }
                     Elements.add(E);
@@ -1040,8 +1055,9 @@ public class Main extends JFrame implements ActionListener {
                     String deadline;
                     switch (j.format){
                         case 0: deadline = dateFormater(formatDate(j.deadline)); str.append(emoji + " " + j.subject + " - " + j.content + ", ⏰" + deadline + "\n"); break;
-                        case 1: deadline = dateFormater(formatDate(j.deadline)); str.append(emoji + " " + j.content + ", ⏰" + deadline + "\n"); break;
-                        case 2: str.append(emoji + " " + j.content + "\n"); break;
+                        case 1: str.append(emoji + " " + j.subject + " - " + j.content + "\n"); break;
+                        case 2: deadline = dateFormater(formatDate(j.deadline)); str.append(emoji + " " + j.content + ", ⏰" + deadline + "\n"); break;
+                        case 3: str.append(emoji + " " + j.content + "\n"); break;
                         default: str.append(emoji + " " + j.content + "\n"); 
                     }
                 }
@@ -1074,8 +1090,9 @@ public class Main extends JFrame implements ActionListener {
                     String deadline;
                     switch (j.format){
                         case 0: deadline = formatDate(j.deadline); compiler.append((j.subject + "~" + j.content + "~" + deadline + "~" + j.format + "~~")); break;
-                        case 1: deadline = formatDate(j.deadline); compiler.append(("null" + "~" + j.content + "~" + deadline + "~" + j.format + "~~")); break;
-                        case 2: compiler.append("null" + "~" + j.content + "~" + "null" + "~" + j.format + "~~"); break;
+                        case 1: compiler.append((j.subject + "~" + j.content + "~" + "null" + "~" + j.format + "~~")); break;
+                        case 2: deadline = formatDate(j.deadline); compiler.append(("null" + "~" + j.content + "~" + deadline + "~" + j.format + "~~")); break;
+                        case 3: compiler.append("null" + "~" + j.content + "~" + "null" + "~" + j.format + "~~"); break;
                         default: compiler.append("null" + "~" + j.content + "~" + "null" + "~" + j.format + "~~"); 
                     }
                 }
@@ -1117,8 +1134,9 @@ public class Main extends JFrame implements ActionListener {
                             String subj = y[0], cont = y[1], dl = y[2], fm = y[3];
                             switch (fm){
                                 case "0": dl = dateFormater(dl); str.append(segEmoji + " " + subj + " - " + cont + ", ⏰" + dl + "\n"); break;
-                                case "1": dl = dateFormater(dl); str.append(segEmoji + " " + cont + ", ⏰" + dl + "\n"); break;
-                                case "2": str.append(segEmoji + " " + cont + "\n"); break;
+                                case "1": str.append(segEmoji + " " + subj + " - " + cont + "\n"); break;
+                                case "2": dl = dateFormater(dl); str.append(segEmoji + " " + cont + ", ⏰" + dl + "\n"); break;
+                                case "3": str.append(segEmoji + " " + cont + "\n"); break;
                                 default: JOptionPane.showMessageDialog(null, "File Reading Error.");
                             } 
                         }
@@ -1157,8 +1175,9 @@ public class Main extends JFrame implements ActionListener {
                             Element E = null;
                             switch (fm){
                                 case 0: E = new Element(subj, cont, parseDate(dl), fm); break;
-                                case 1: E = new Element(null, cont, parseDate(dl), fm); break;  
-                                case 2: E = new Element(null, cont, null, fm); break;
+                                case 1: E = new Element(subj, cont, null, fm); break;
+                                case 2: E = new Element(null, cont, parseDate(dl), fm); break;  
+                                case 3: E = new Element(null, cont, null, fm); break;
                                 default: JOptionPane.showMessageDialog(null, "File Reading Error.");
                             }
                             elements.add(E);

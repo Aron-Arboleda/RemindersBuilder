@@ -106,7 +106,7 @@ public class ElementGroup {
         JLabel elementFormatLabel = new JLabel("Format:");
         elementFormatLabel.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 14));
 
-        String formatChoices[] = {"s - c, d", "c, d", "c"};
+        String formatChoices[] = {"s - c, d", "s - c" ,"c, d", "c"};
         JComboBox<String> elementFormatCombo = new JComboBox<String>(formatChoices);
         elementFormatCombo.setFont(new Font("Segoe UI", Font.PLAIN, 11));
         elementFormatCombo.setPreferredSize(new Dimension(70,24));

@@ -57,7 +57,7 @@ public class SegmentGroup {
         segmentIndicator2.setFont(new Font("Segoe UI", Font.PLAIN, 30));
         segmentIndicator2.setBounds(240,15,50,20);
 
-        String formatChoices[] = {"> subject - content, deadline", "> content, deadline", "> content"};
+        String formatChoices[] = {"> subject - content, deadline", "> subject - content", "> content, deadline", "> content"};
         JComboBox<String> segmentFormatCombo = new JComboBox<String>(formatChoices);
         segmentFormatCombo.setFont(new Font("Segoe UI", Font.PLAIN, 11));
         segmentFormatCombo.setBounds(330,15, 180,30);
