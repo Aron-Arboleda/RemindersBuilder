@@ -39,6 +39,10 @@ A sample where an output text reminder might be useful can be seen in the image(
 * a need for a time chooser UI (currently, only data chooser is available per bullet item)
 * an SQL database (the database currently runs on a .txt file)
 
+## Credits
+* datechooser UI from [Ra Ven's tutorial](https://www.youtube.com/watch?v=8x_t8euwCGM&t=108s)
+* some front-end designs from [rezkae](https://github.com/rezkae)
+
 ## Images
 
 ### Home Page
@@ -52,5 +56,7 @@ A sample where an output text reminder might be useful can be seen in the image(
 
 ### Collections Page
 <img src='RemindersBuilder_collectionspage.png'>
+
+
 
 <br>&copy; 2024 Aron-Arboleda. All rights reserved.
