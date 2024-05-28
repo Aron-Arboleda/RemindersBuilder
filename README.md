@@ -41,7 +41,7 @@ A sample where an output text reminder might be useful can be seen in the image(
 
 ## Credits
 * datechooser UI from [Ra Ven's tutorial](https://www.youtube.com/watch?v=8x_t8euwCGM&t=108s)
-* some front-end designs from [rezkae](https://github.com/rezkae)
+* some front-end designs made by [rezkae](https://github.com/rezkae)
 
 ## Images
 
