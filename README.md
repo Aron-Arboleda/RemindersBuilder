@@ -22,7 +22,7 @@ A sample where an output text reminder might be useful can be seen in the image(
 
 ## Instructions
 ### To use the app
-* Download and run the RemindersBuilder.exe file from the "dist" folder to access the app.
+* Download and run the [RemindersBuilder_Installer.exe]() file from the "dist" folder to access the app.
 * When downloading the file, your browser may display a caution indicating potential harm. As a beginner in deploying software programs, I am still working on making the app more "credible" so that operating systems may not detect it as harmful. In the meantime, simply click "keep anyway" when prompted to download by the browser. Upon running the file, Windows Defender may issue a caution as well; in this case, click "run anyway," and the interface should appear.
 
 #### Troubleshooting
