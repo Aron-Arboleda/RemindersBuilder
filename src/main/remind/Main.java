@@ -69,8 +69,8 @@ public class Main extends JFrame implements ActionListener {
     //#endregion
 
     Main(){
-        //filePath = "src\\main\\resources\\data\\RemindersData.txt";
-        filePath = getDatabaseFilePath();
+        filePath = "src\\main\\resources\\data\\RemindersData.txt";
+        //filePath = getDatabaseFilePath();
         createDatabaseFile(filePath);
         this.setTitle("Reminders");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

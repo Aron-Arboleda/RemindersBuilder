@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>D:\Documents\Codes\ProjectsRepositories\RemindersBuilder\dist\RemindersBuilder.jar</jar>
+  <outfile>D:\Documents\Codes\ProjectsRepositories\RemindersBuilder\dist\RemindersBuilder.exe</outfile>
+  <errTitle>RemindersBuilder Error</errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl>https://www.java.com/download/ie_manual.jsp</downloadUrl>
+  <supportUrl>https://www.java.com/en/download/help/index.html</supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest></manifest>
+  <icon>D:\Documents\Codes\ProjectsRepositories\RemindersBuilder\dist\RemindersIcon.ico</icon>
+  <singleInstance>
+    <mutexName>RemindersBuilder_Mutex_2B1E2D4B</mutexName>
+    <windowTitle>Reminders Builder</windowTitle>
+  </singleInstance>
+  <jre>
+    <path>./jre</path>
+    <requiresJdk>false</requiresJdk>
+    <requires64Bit>false</requires64Bit>
+    <minVersion>1.4.0</minVersion>
+    <maxVersion></maxVersion>
+  </jre>
+  <versionInfo>
+    <fileVersion>1.0.0.0</fileVersion>
+    <txtFileVersion>1.0.0.0</txtFileVersion>
+    <fileDescription>Reminders Builder App</fileDescription>
+    <copyright>Copyright (c) 2024 Re-mind. All rights reserved. Redistribution and use are permitted with conditions. No warranties; no liability.</copyright>
+    <productVersion>1.0.0.0</productVersion>
+    <txtProductVersion>1.0.0.0</txtProductVersion>
+    <productName>RemindersBuilder</productName>
+    <companyName>Re-mind</companyName>
+    <internalName>RemindersBuilder</internalName>
+    <originalFilename>RemindersBuilder.exe</originalFilename>
+    <trademarks></trademarks>
+    <language>ENGLISH_US</language>
+  </versionInfo>
+  <messages>
+    <startupErr>An error occurred while starting the application. (Startup error)</startupErr>
+    <jreNotFoundErr>This application requires a Java Runtime Environment. (JRE error)</jreNotFoundErr>
+    <jreVersionErr>This application requires an updated Java Runtime Environment. (JRE version error)</jreVersionErr>
+    <launcherErr>The registry refers to a nonexistent Java Runtime Environment installation or the runtime is corrupted. (Launcher error)</launcherErr>
+    <instanceAlreadyExistsMsg>An application instance is already running.</instanceAlreadyExistsMsg>
+  </messages>
+</launch4jConfig>
