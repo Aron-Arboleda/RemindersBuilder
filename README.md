@@ -22,11 +22,10 @@ A sample where an output text reminder might be useful can be seen in the image(
 
 ## Instructions
 ### To use the app
-* Download and run the [RemindersBuilder_Installer.exe]() file from the "dist" folder to access the app.
-* When downloading the file, your browser may display a caution indicating potential harm. As a beginner in deploying software programs, I am still working on making the app more "credible" so that operating systems may not detect it as harmful. In the meantime, simply click "keep anyway" when prompted to download by the browser. Upon running the file, Windows Defender may issue a caution as well; in this case, click "run anyway," and the interface should appear.
+* Download and run the [RemindersBuilder_Installer.exe](https://github.com/Aron-Arboleda/RemindersBuilder/blob/master/dist/RemindersBuilder_Installer.exe) file from the "dist" folder to access the app.
+* it will redirect you to the installer file's directory in this repository. Click the download button on the right side, wait for a few seconds, and the download progress should pop up at the top. It will display a lot of caution and warning messages because i don't know for the life of me how to make the program to be recognized as a safe application (sorry i'm a noob at deploying apps) but just click the "keep anyway" button or anything else to continue downloading the file. Then when the file is downloaded, you can run the installer, it will ask for admin priviledges to run the file(because it will place the program on the Program Files folder of your pc, it needs permission to do that), then windows defender thing will pop up, saying it's not a safe file or something, just click "More info" and continue the application installment. Go through the installer and after that, the program should be installed on your end.
 
 #### Troubleshooting
-* The program runs with the JRE (Java Runtime Environment), so ensure that you have Java installed on your PC, specifically JRE. The program will look for the runtime environment in your JAVA HOME or PATH folder in environmental variables, so be sure to add the "bin" path of the JRE to those locations.
 * If the .exe file fails to open, try downloading the .jar file and run that instead. If the issue persists, attempt troubleshooting by downloading jarfix.exe from the web, enable jarfix, and then attempt to run it again.
 * If all else fails, clone the entire repository in your IDE client and try compiling it on your end.
 
