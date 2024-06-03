@@ -53,4 +53,4 @@ A sample where an output text reminder might be useful can be seen in the image(
 ### Collections Page
 <img src='RemindersBuilder_collectionspage.png'>
 
-<br>&copy; 2023 Aron-Arboleda. All rights reserved.
+<br>&copy; 2024 Aron-Arboleda. All rights reserved.
